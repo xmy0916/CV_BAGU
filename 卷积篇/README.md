@@ -22,9 +22,11 @@
 <details>
   <summary>答案</summary>
     传统卷积
+    <br>
     <img src="source/norm_conv.png">
     <br>
     DW卷积
+    <br>
     <img src="source/DW_conv.png">
     分组卷积就是在输入的channal维度上分组，不同的组用不同的卷积来提取特征，经典的使用场景就是DW卷积，DW卷积先用分组卷积提取图像特征，在用1 * 1正常的卷积来修改输出的通道数，通过两步来实现正常的卷积功能，节省计算量。
   </details>
