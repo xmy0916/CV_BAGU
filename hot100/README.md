@@ -67,4 +67,461 @@
   快慢指针
 </details>
 
+> 20、有效的括号
+<details>
+  <summary><a href="./code/20.py">答案</a></summary>
+  括号问题，一般考虑栈来解，栈不行考虑可否dp，这个直接判断是右括号时栈顶和当前即可，左括号压栈。最后要栈空
+</details>
+
+> 21、合并两个有序链表
+<details>
+  <summary><a href="./code/21.py">答案</a></summary>
+  双指针即可，注意两个链表可能不等长，如果两个指针一个为空另一个不空得接着插入。
+</details>
+
+> 22、括号生成
+<details>
+  <summary><a href="./code/22.py">答案</a></summary>
+  dp的思想，计算i组括号时的括号组合时，开始遍历 p q ，其中p+q=i-1，那么dp[i] +=  "(" + p的每一个情况 + ")" + q的每一个情况
+</details>
+
+> 23、合并K个升序链表
+<details>
+  <summary><a href="./code/23.py">答案</a></summary>
+  K指针比较好写，等价合并两个有序链表。
+</details>
+
+> 31、下一个排列⚠️
+<details>
+  <summary><a href="./code/31.py">答案</a></summary>
+  <li>1、从后向前查找第一个相邻升序的元素对 (i,j)，满足 A[i] < A[j]。此时 [j,end) 必然是降序
+  <li>2、在 [j,end) 从后向前查找第一个满足 A[i] < A[k] 的 k。A[i]、A[k] 分别就是上文所说的「小数」、「大数」
+  <li>3、将 A[i] 与 A[k] 交换
+  <li>4、可以断定这时 [j,end) 必然是降序，逆置 [j,end)，使其升序
+  <li>5、如果在步骤 1 找不到符合的相邻元素对，说明当前 [begin,end) 为一个降序顺序，则直接跳到步骤 4
+  <li>⚠️感觉这题很难啊，要是考上一个排列还是不会做...
+</details>
+
+> 32、最长有效括号
+<details>
+  <summary><a href="./code/32.py">答案</a></summary>
+  动态规划，i-dp[i-1]-1是与当前)对称的位置<br>
+  if s[i]==')' and i-dp[i-1]-1>=0 and s[i-dp[i-1]-1]=='(':<br>
+    dp[i]=dp[i-1]+dp[i-dp[i-1]-2]+2
+</details>
+
+> 33、搜索旋转排序数组⚠️
+<details>
+  <summary><a href="./code/33.py">答案</a></summary>
+  二分，判断目标在有序侧还是无序侧，有序无序侧判断可以直接根据头尾的大小关系分析。
+</details>
+
+> 34、在排序数组中查找元素的第一个和最后一个位置
+<details>
+  <summary><a href="./code/34.py">答案</a></summary>
+  第一次二分找左，第二次二分找右
+</details>
+
+> 39、组合总和
+<details>
+  <summary><a href="./code/39.py">答案</a></summary>
+  要注意某个数可以多次利用，所以dfs给下一层的剩余候选要保留这一次用的那个值。可以提前sort剪枝。
+</details>
+
+> 42、接雨水
+<details>
+  <summary><a href="./code/42.py">答案</a></summary>
+  从左往右遍历找到比当前index的高度最远的index， 从右往左遍历找到比当前index的高度最远的index， 然后再遍历一遍height即可，可以直接拿到左右最远的高的最小的那个就可以算出当前柱子能存多少水。
+</details>
+
+> 46、全排列
+<details>
+  <summary><a href="./code/46.py">答案</a></summary>
+  
+</details>
+
+> 48、旋转图像
+<details>
+  <summary><a href="./code/48.py">答案</a></summary>
+  
+</details>
+
+> 49、字母异位词分组
+<details>
+  <summary><a href="./code/49.py">答案</a></summary>
+  
+</details>
+
+> 53、最大子数组和
+<details>
+  <summary><a href="./code/53.py">答案</a></summary>
+  
+</details>
+
+> 55、跳跃游戏
+<details>
+  <summary><a href="./code/55.py">答案</a></summary>
+  
+</details>
+
+> 56、合并区间
+<details>
+  <summary><a href="./code/56.py">答案</a></summary>
+  
+</details>
+
+> 62、不同路径
+<details>
+  <summary><a href="./code/62.py">答案</a></summary>
+  
+</details>
+
+> 64、最小路径和
+<details>
+  <summary><a href="./code/64.py">答案</a></summary>
+  
+</details>
+
+> 70、爬楼梯
+<details>
+  <summary><a href="./code/70.py">答案</a></summary>
+  
+</details>
+
+> 72、编辑距离
+<details>
+  <summary><a href="./code/72.py">答案</a></summary>
+  
+</details>
+
+> 75、 颜色分类
+<details>
+  <summary><a href="./code/75.py">答案</a></summary>
+  
+</details>
+
+> 76、最小覆盖子串⚠️
+<details>
+  <summary><a href="./code/76.py">答案</a></summary>
+  
+</details>
+
+> 78、子集
+<details>
+  <summary><a href="./code/78.py">答案</a></summary>
+  
+</details>
+
+> 79、单词搜索
+<details>
+  <summary><a href="./code/79.py">答案</a></summary>
+  
+</details>
+
+> 84、柱状图中最大的矩形
+<details>
+  <summary><a href="./code/84.py">答案</a></summary>
+  
+</details>
+
+> 85、最大矩形
+<details>
+  <summary><a href="./code/85.py">答案</a></summary>
+  
+</details>
+
+> 94、二叉树的中序遍历
+<details>
+  <summary><a href="./code/94.py">答案</a></summary>
+  
+</details>
+
+> 96、不同的二叉搜索树
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 98、验证二叉搜索树
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 101、对称二叉树
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 102、二叉树的层序遍历
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 104、 二叉树的最大深度
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 105、从前序与中序遍历序列构造二叉树
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 114、二叉树展开为链表
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 121、买卖股票的最佳时机
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 124、二叉树中的最大路径和
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 128、最长连续序列
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 136、只出现一次的数字
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 139、单词拆分
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 141、环形链表
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
+> 
+<details>
+  <summary><a href="./code/.py">答案</a></summary>
+  
+</details>
+
 
