@@ -137,67 +137,67 @@
 > 46、全排列
 <details>
   <summary><a href="./code/46.py">答案</a></summary>
-  
+  dfs即可。
 </details>
 
 > 48、旋转图像
 <details>
   <summary><a href="./code/48.py">答案</a></summary>
-  
+  先上下翻转，然后左右翻转即可。
 </details>
 
 > 49、字母异位词分组
 <details>
   <summary><a href="./code/49.py">答案</a></summary>
-  
+  可以用桶排序的思想，统计下出现的所有字符假设n个，构建一个长度为n的数组，某个字符出现了就对应位置+1，然后字典的键是这个数组，值是所有的结果，最后返回values即可
 </details>
 
 > 53、最大子数组和
 <details>
   <summary><a href="./code/53.py">答案</a></summary>
-  
+  动态规划，dp[i] = max(dp[i-1]+arr[i], arr[i])
 </details>
 
 > 55、跳跃游戏
 <details>
   <summary><a href="./code/55.py">答案</a></summary>
-  
+  从左到右遍历，维护一个可以跳到最远的遍历，如果当前遍历的索引大于可跳到最远就直接退出了，否则就看看是否需要更新跳到最远。
 </details>
 
 > 56、合并区间
 <details>
   <summary><a href="./code/56.py">答案</a></summary>
-  
+  先按区间左边从小到大排序，然后遍历一遍分相交、不相交、覆盖三种情况讨论就好了。
 </details>
 
 > 62、不同路径
 <details>
   <summary><a href="./code/62.py">答案</a></summary>
-  
+  二维动态规划
 </details>
 
 > 64、最小路径和
 <details>
   <summary><a href="./code/64.py">答案</a></summary>
-  
+  二维动态规划
 </details>
 
 > 70、爬楼梯
 <details>
   <summary><a href="./code/70.py">答案</a></summary>
-  
+  动态规划，或者递归，还有通解O(1)(字节面试问到了，可以搜斐波那契数列通解)
 </details>
 
 > 72、编辑距离
 <details>
   <summary><a href="./code/72.py">答案</a></summary>
-  
+  动态规划
 </details>
 
 > 75、 颜色分类
 <details>
   <summary><a href="./code/75.py">答案</a></summary>
-  
+  第一遍把0弄到前面，记录最后一个0的位置，第二遍把所有的1弄到最后一个0的后面即可。
 </details>
 
 > 76、最小覆盖子串⚠️
@@ -209,73 +209,73 @@
 > 78、子集
 <details>
   <summary><a href="./code/78.py">答案</a></summary>
-  
+  dfs即可
 </details>
 
 > 79、单词搜索
 <details>
   <summary><a href="./code/79.py">答案</a></summary>
-  
+  遍历一二维字符，从遍历位置开始dfs，在dfs的时候需要把当前位置用已使用的符号取代比如'-'，在回溯的时候需要还原。
 </details>
 
 > 84、柱状图中最大的矩形
 <details>
   <summary><a href="./code/84.py">答案</a></summary>
-  
+  单调队列
 </details>
 
 > 85、最大矩形
 <details>
   <summary><a href="./code/85.py">答案</a></summary>
-  
+  在纵轴上把1相加就可以把二维降为一维，然后用上一题的单调队列即可。
 </details>
 
 > 94、二叉树的中序遍历
 <details>
   <summary><a href="./code/94.py">答案</a></summary>
-  
+  非递归：root不空的话，root压栈，遍历left（root=root.left），空的话弹栈给root，记录root的值，遍历right(root=root.right)
 </details>
 
 > 96、不同的二叉搜索树
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  就是n个节点假设左子树由i个节点右子树就有n-1-i个节点，此时不同的二叉树就是dp[i]*dp[n-1-i]了，然后把i从0到n-1的所有结果加起来即可。
 </details>
 
 > 98、验证二叉搜索树
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  中序遍历的结果是递增的，用非递归的方法遍历二叉树，然后在记录节点的时候和之前的一个结果比较大小即可。
 </details>
 
 > 101、对称二叉树
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  同时递归左右即可
 </details>
 
 > 102、二叉树的层序遍历
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  一个队列即可，初始化队的长度1，左子树先入队然后右子树入队，算下队的长度开始下一层
 </details>
 
 > 104、 二叉树的最大深度
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  递归
 </details>
 
 > 105、从前序与中序遍历序列构造二叉树
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  前序的第一个是根节点，去中序找根的index，index的左边就是左子树的中序遍历，右边是右子树的中序遍历，递归即可
 </details>
 
 > 114、二叉树展开为链表
 <details>
   <summary><a href="./code/.py">答案</a></summary>
-  
+  非递归前序遍历即可
 </details>
 
 > 121、买卖股票的最佳时机
